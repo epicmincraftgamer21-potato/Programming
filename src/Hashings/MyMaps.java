@@ -97,7 +97,11 @@ public class MyMaps<K,V>
 
 
         //buckets.getHash(key);
-        Entry<K, V> bucket = buckets[myObj.getHash(key) % getBucketSize()];
+
+
+
+
+        Entry<K, V> bucket = buckets[ Math.abs(key.hashCode()) % getBucketSize()];
 
         while (bucket != null) {
             if (key == bucket.key) {

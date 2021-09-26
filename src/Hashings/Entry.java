@@ -35,10 +35,7 @@ public class Entry<K,V>
         return next;
     }
 
-    public int getHash(K key)
-    {
-        return key == null ? 0 : Math.abs(key.hashCode());
-    }
+
 
     public boolean equals(Object obj)
     {
@@ -57,6 +54,11 @@ public class Entry<K,V>
         return false;
     }
 
+
+    public int getHash(K key)
+    {
+        return key == null ? 0 : Math.abs(key.hashCode());
+    }
     @Override
     public int hashCode()
     {
